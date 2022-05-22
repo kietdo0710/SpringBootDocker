@@ -14,7 +14,7 @@ node {
     }
 
     stage("Image Prune"){
-         sh "sudo docker image prune -f"
+         sh "docker image prune -f"
     }
 
     stage('Image Build'){
