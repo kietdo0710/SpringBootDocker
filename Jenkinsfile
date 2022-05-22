@@ -34,12 +34,12 @@ node {
     }
 	
 	stage("SonarQube Scan"){
-        withSonarQubeEnv(credentialsId: 'SonarQubeCreds') {
-			sh "${sonarscanner}/bin/sonar-scanner"
+//        withSonarQubeEnv(credentialsId: 'SonarQubeCreds') {
+//			sh "${sonarscanner}/bin/sonar-scanner"
 		}
     }
 	
 	stage("Ansible Deploy"){
-        ansiblePlaybook inventory: 'hosts', playbook: 'deploy.yaml'
+//        ansiblePlaybook inventory: 'hosts', playbook: 'deploy.yaml'
     }
 }
