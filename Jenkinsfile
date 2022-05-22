@@ -36,7 +36,7 @@ node {
 	stage("SonarQube Scan"){
 //        withSonarQubeEnv(credentialsId: 'SonarQubeCreds') {
 //			sh "${sonarscanner}/bin/sonar-scanner"
-		}
+//		}
     }
 	
 	stage("Ansible Deploy"){
