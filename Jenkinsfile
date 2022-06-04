@@ -33,14 +33,6 @@ node {
         }
     }
     
-    stage('Pull from Docker Registry') {
-	    withCredentials([usernamePassword(credentialsId: 'MyCreds', usernameVariable: dockerUser, passwordVariable: dockerPassword)]) {
-            sh "docker pull $dockerUser/$containerName:$tag"
-            echo "Image pull complete"
-            sh "docker run $containerName bash"
-        }
-    }
-	
 	stage("SonarQube Scan"){
 //        withSonarQubeEnv(credentialsId: 'SonarQubeCreds') {
 //			sh "${sonarscanner}/bin/sonar-scanner"
