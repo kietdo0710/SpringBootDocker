@@ -37,7 +37,7 @@ node {
 	    withCredentials([usernamePassword(credentialsId: 'MyCreds', usernameVariable: dockerUser, passwordVariable: dockerPassword)]) {
             sh "docker pull $dockerUser/$containerName:$tag"
             echo "Image pull complete"
-            sh "docker run -it $containerName bash"
+            sh "docker run $containerName bash"
         }
     }
 	
